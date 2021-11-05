@@ -9,17 +9,16 @@
     <description>Recent content on Code[&amp;Pwn]</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 04 Nov 2021 20:36:11 -0600</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>About</title>
-      <link>/about/about/</link>
+      <link>/about/</link>
       <pubDate>Thu, 04 Nov 2021 20:36:11 -0600</pubDate>
       
-      <guid>/about/about/</guid>
+      <guid>/about/</guid>
       <description>
         
           
@@ -28,7 +27,8 @@
         
         
         
-          
+          The Code[&amp;amp;Pwn] is made up of,
+NightWolf &amp;hellip;
           
         
         </description>
