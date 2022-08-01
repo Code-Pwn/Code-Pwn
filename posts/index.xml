@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Code[&amp;Pwn]</title>
+    <title>Posts on Code[&amp;Pwn]</title>
     
     
     
-    <link>/</link>
-    <description>Recent content on Code[&amp;Pwn]</description>
+    <link>/posts/</link>
+    <description>Recent content in Posts on Code[&amp;Pwn]</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>2022</copyright>
     <lastBuildDate>Sun, 31 Jul 2022 19:40:57 -0600</lastBuildDate>
     
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -83,47 +83,6 @@ My calculator won&amp;rsquo;t be getting pwned again&amp;hellip;
 $ nc safepy.chal.uiuc.tf 1337
 author: tow_nater
 Handout Dockerfile # Copyright 2020-2022 Google LLC # # Licensed under the Apache License, Version 2.0 (the &amp;#34;License&amp;#34;); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # https://www.
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>Contact</title>
-      <link>/contact/</link>
-      <pubDate>Sun, 07 Nov 2021 10:21:24 -0700</pubDate>
-      
-      <guid>/contact/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          Code[&amp;amp;Pwn] can be contacted by email at, codexpwn@protonmail.com.
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>/about/</link>
-      <pubDate>Thu, 04 Nov 2021 20:36:11 -0600</pubDate>
-      
-      <guid>/about/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          The Code[&amp;amp;Pwn] was founded in 2020 by SinisterMatrix. The team is currently composed of,
-SinisterMatrix Soul Blacknote NightWolf PwnFunction Blacknote 0xDezzy larksprue Liikt theguy Killbit 0xSN1PE _5h4rk_ TipsyBacchus Code[&amp;amp;Pwn] has also colaborated with the ByteForce team and seveal other guest players. In 2020 the team participated in the Red Team Village Finals and recieved 18th place. In 2021 the team colaborated with Byteforce and again competed in the RTV Finals. This time the rank of 9th.
           
         
         </description>

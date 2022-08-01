@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>
+        UIUCTF Frame ::
+        Code[&amp;Pwn]
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="&amp;ldquo;ornate wooden empty picture frame, on a teal wall&amp;rdquo;
+web, php, beginner
+We made it easy to add a frame to your digital art!
+https://frame-web.chal.uiuc.tf/
+authors: Emma &#43; Minh
+Handout Dockerfile # Copyright 2020 Google LLC # # Licensed under the Apache License, Version 2.0 (the &amp;#34;License&amp;#34;); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # https://www."
+/>
+<meta
+  name="keywords"
+  content=""
+/>
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/posts/frame/" />
+
+
+
+
+
+<link rel="stylesheet" href="/assets/style.css" />
+
+<link rel="stylesheet" href="/style.css" />
+
+
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="144x144"
+  href="/img/apple-touch-icon-144-precomposed.png"
+/>
+<link rel="shortcut icon" href="/img/favicon.png" />
+
+
+<link href="/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="UIUCTF Frame"/>
+<meta name="twitter:description" content="&ldquo;ornate wooden empty picture frame, on a teal wall&rdquo;
+web, php, beginner
+We made it easy to add a frame to your digital art!
+https://frame-web.chal.uiuc.tf/
+authors: Emma &#43; Minh
+Handout Dockerfile # Copyright 2020 Google LLC # # Licensed under the Apache License, Version 2.0 (the &#34;License&#34;); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # https://www."/>
+
+
+
+<meta property="og:title" content="UIUCTF Frame" />
+<meta property="og:description" content="&ldquo;ornate wooden empty picture frame, on a teal wall&rdquo;
+web, php, beginner
+We made it easy to add a frame to your digital art!
+https://frame-web.chal.uiuc.tf/
+authors: Emma &#43; Minh
+Handout Dockerfile # Copyright 2020 Google LLC # # Licensed under the Apache License, Version 2.0 (the &#34;License&#34;); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # https://www." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/frame/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-07-31T18:16:38-06:00" />
+<meta property="article:modified_time" content="2022-07-31T18:16:38-06:00" /><meta property="og:site_name" content="Code[&amp;Pwn]" />
+
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a
+  href="/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >Code[&amp;Pwn]</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/contact">Contact</a></li>
+        
+      
+        
+          <li><a href="/posts">Posts</a></li>
+        
+      
+      
+      
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/contact">Contact</a></li>
+      
+    
+      
+        <li><a href="/posts">Posts</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <div class="post">
+    <h1 class="post-title">UIUCTF Frame</h1>
+    <div class="post-meta">
+      
+        <span class="post-date">
+          2022-07-31
+        </span>
+
+        
+          
+        
+      
+
+      
+
+
+      
+    </div>
+
+    
+
+    
+
+    <div class="post-content">
+      
+      <p><img src="/img/frame.png" alt=""></p>
+<p><em>&ldquo;ornate wooden empty picture frame, on a teal wall&rdquo;</em></p>
+<p>web, php, beginner</p>
+<p>We made it easy to add a frame to your digital art!</p>
+<p><a href="https://frame-web.chal.uiuc.tf/">https://frame-web.chal.uiuc.tf/</a></p>
+<p><strong>authors</strong>: Emma + Minh</p>
+<h2 id="handout">Handout</h2>
+<h4 id="dockerfile">Dockerfile</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># Copyright 2020 Google LLC</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Licensed under the Apache License, Version 2.0 (the &#34;License&#34;);</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># you may not use this file except in compliance with the License.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># You may obtain a copy of the License at</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#     https://www.apache.org/licenses/LICENSE-2.0</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Unless required by applicable law or agreed to in writing, software</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># distributed under the License is distributed on an &#34;AS IS&#34; BASIS,</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># See the License for the specific language governing permissions and</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># limitations under the License.</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">FROM ubuntu:20.04 as chroot</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">RUN /usr/sbin/useradd -u 1000 user</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">RUN apt-get update \</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&amp;&amp;</span> <span style="color:#ae81ff">apt-get install -yq --no-install-recommends \</span>
+</span></span><span style="display:flex;"><span>       <span style="color:#ae81ff">curl ca-certificates socat gnupg lsb-release software-properties-common php-cgi \</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&amp;&amp;</span> <span style="color:#ae81ff">rm -rf /var/lib/apt/lists/*</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">RUN mkdir -p /mnt/disks/uploads</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">VOLUME /mnt/disks/uploads</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">COPY web-apps /web-apps</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">COPY flag /</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">FROM gcr.io/kctf-docker/challenge@sha256:d884e54146b71baf91603d5b73e563eaffc5a42d494b1e32341a5f76363060fb</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">RUN apt-get update \</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&amp;&amp;</span> <span style="color:#ae81ff">DEBIAN_FRONTEND=noninteractive apt-get install -yq --no-install-recommends tzdata apache2 \</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&amp;&amp;</span> <span style="color:#ae81ff">ln -fs /usr/share/zoneinfo/Europe/Berlin /etc/localtime \</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&amp;&amp;</span> <span style="color:#ae81ff">dpkg-reconfigure --frontend noninteractive tzdata \</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&amp;&amp;</span> <span style="color:#ae81ff">rm -rf /var/lib/apt/lists/*</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">RUN service apache2 start</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">COPY --from=chroot / /chroot</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># For CGI sandboxing</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">RUN ln -s /etc/apache2/mods-available/cgi.load /etc/apache2/mods-enabled/cgi.load</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">RUN ln -s /etc/apache2/mods-available/actions.load /etc/apache2/mods-enabled/actions.load</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">RUN ln -s /chroot/web-apps /web-apps</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">COPY cgi-bin /usr/lib/cgi-bin</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">COPY apache2-kctf-nsjail.conf /etc/apache2/conf-enabled/</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">COPY cgi-bin.nsjail.cfg /home/user/cgi-bin.nsjail.cfg</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">VOLUME /var/log/apache2</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">VOLUME /var/run/apache2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">CMD kctf_setup \</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&amp;&amp;</span> <span style="color:#ae81ff">bash -c &#39;source /etc/apache2/envvars &amp;&amp; APACHE_RUN_USER=user APACHE_RUN_GROUP=user /usr/sbin/apache2 -D FOREGROUND&#39;</span>
+</span></span></code></pre></div><h4 id="indexphp">index.php</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css&#34;</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">integrity</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3&#34;</span> <span style="color:#a6e22e">crossorigin</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;anonymous&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">title</span>&gt;Picture Frame Generator&lt;/<span style="color:#f92672">title</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">style</span>&gt;
+</span></span><span style="display:flex;"><span>      #frame {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">position</span>:<span style="color:#66d9ef">relative</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">top</span>:<span style="color:#ae81ff">0</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">left</span>:<span style="color:#ae81ff">0</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">width</span>:<span style="color:#ae81ff">564</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">height</span>:<span style="color:#ae81ff">686</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">background-image</span>: url(<span style="color:#e6db74">frame-1.png</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">background-position</span>: <span style="color:#66d9ef">center</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">background-size</span>: <span style="color:#66d9ef">cover</span>;
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>      #submission {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">position</span>:<span style="color:#66d9ef">absolute</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">width</span>:<span style="color:#ae81ff">244</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">height</span>:<span style="color:#ae81ff">376</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">object-fit</span>: <span style="color:#66d9ef">cover</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">left</span>: <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">top</span>: <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">right</span>: <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">bottom</span>: <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">block</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">margin</span>: <span style="color:#66d9ef">auto</span>;
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">style</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container text-center&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;row&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col py-3&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>          &lt;<span style="color:#f92672">h1</span>&gt;Picture Frame Generator&lt;/<span style="color:#f92672">h1</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;row&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>          &lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">action</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/&#34;</span> <span style="color:#a6e22e">method</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;post&#34;</span> <span style="color:#a6e22e">enctype</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;multipart/form-data&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>            Select image to upload:
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fileToUpload&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fileToUpload&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Upload Image&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>          &lt;/<span style="color:#f92672">form</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;row justify-content-center&#34;</span>&gt;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;?php
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">ini_set(&#39;display_errors&#39;, 1);
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">ini_set(&#39;display_startup_errors&#39;, 1);
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">error_reporting(E_ALL);
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">          if (isset($_POST[&#34;submit&#34;])) {
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">            $allowed_extensions = array(&#34;.jpg&#34;, &#34;.jpeg&#34;, &#34;.png&#34;, &#34;.gif&#34;);
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">            $filename = $_FILES[&#34;fileToUpload&#34;][&#34;name&#34;];
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">            $tmpname = $_FILES[&#34;fileToUpload&#34;][&#34;tmp_name&#34;];
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">            $target_file = &#34;uploads/&#34; . bin2hex(random_bytes(8)) . &#34;-&#34; .basename($filename);
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">            $has_extension = false;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">            foreach ($allowed_extensions as $extension) {
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">              if (strpos(strtolower($filename), $extension) !== false) {
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">                $has_extension = true;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">              }
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">            }
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">            if ($_FILES[&#34;fileToUpload&#34;][&#34;size&#34;] &lt; 2000000) {
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">              if (getimagesize($tmpname) &amp;&amp; $has_extension) {
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">                if (move_uploaded_file($tmpname, $target_file)) {
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">                  echo &#34;&lt;div id=&#39;frame&#39;&gt;&lt;img src=&#39;$target_file&#39; alt=&#39;Your image failed to load :(&#39; id=&#39;submission&#39;&gt;&lt;/div&gt;&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">                } else {
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">                  echo &#34;There was an error uploading your file. Please contact an admin.&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">                }
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">              } else {
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">                echo &#34;Your picture is not a picture and could not be framed.&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">              }
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">            } else {
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">              echo &#34;Your picture is too large for us to process.&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">            }
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">          }
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">        ?&gt;</span>
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
+</span></span></code></pre></div><h2 id="solution">Solution</h2>
+<p>Based on the files in the handout, it can be assumed the web server is running PHP and that the file upload expects image files. This presents a possible scenario for abuse. If an attacker can upload a file that is considered an image file but also contains valid PHP code, they could achieve arbitrary code execution.</p>
+<p>An simple though perhaps clumsy implementation is to echo <code>&lt;?php system('cat /flag'); ?&gt;</code> to the end of a valid image file and then upload it. Below is an image where just that has been done.</p>
+<p><img src="/img/segfault.php.png" alt=""></p>
+<p>Once it is uploaded to the portal, browser development tools can be used to identify where the image is being loaded from on the server. Some patience is required while the page loads but then all the way at the bottom, the flag can be seen.</p>
+<p><img src="/img/frame-flag.png" alt=""></p>
+
+    </div>
+    
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h"
+              >Read other posts</span
+            >
+            <hr />
+          </div>
+          <div class="pagination__buttons">
+            
+              <span class="button previous">
+                <a href="/posts/ahorsewithnoname/">
+                  <span class="button__icon">←</span>
+                  <span class="button__text">UIUCTF Ahorsewithnoname</span>
+                </a>
+              </span>
+            
+            
+              <span class="button next">
+                <a href="/posts/safepy/">
+                  <span class="button__text">UIUCTF Safepy</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
+          </div>
+        </div>
+      
+    
+
+    
+      
+        
+
+      
+    
+  </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">2022</div>
+      
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

